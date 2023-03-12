@@ -15,8 +15,8 @@ body {
 
 .wrapper {
    max-width: 120em;  /* 1920px */
-	padding: 0px 3em;
-	margin: 0px auto;
+	padding: 0em 3em;
+	margin: 0em auto;
 	box-sizing: border-box;
 }
 
@@ -36,10 +36,11 @@ input[name^='bayan'] {
 
 .bayan__subtitle {
    margin: 0.4em 0;
+   font-weight: bold;
 }
 
 .bayan__item {
-   border-top: 1px solid rgb(122, 122, 122);
+   border-top: 0.1em solid rgb(122, 122, 122);
    margin: 0.6em;
    display: flex;
    flex-direction: column-reverse;
@@ -50,7 +51,7 @@ input[name^='bayan'] {
 }
 
 .bayan__content img {
-   margin: 0px auto;
+   margin: 0 auto;
    display: block;
    max-width: 100%;
    width: 30em;
