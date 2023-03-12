@@ -1,0 +1,176 @@
+html,
+body {
+   min-height: 100vh;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+   background-color: rgb(250, 249, 197);
+}
+
+body {
+   overflow: scroll
+}
+
+.wrapper {
+   max-width: 120em;  /* 1920px */
+	padding: 0em 3em;
+	margin: 0em auto;
+	box-sizing: border-box;
+}
+
+.bayan {
+   display: flex;
+   width: 100%;
+   flex-direction: column;
+}
+
+input[name^='bayan'] {
+   opacity: 0;
+}
+
+.bayan__title {
+   margin-left: 0.2em;
+}
+
+.bayan__subtitle {
+   margin: 0.4em 0;
+   font-weight: bold;
+}
+
+.bayan__item {
+   border-top: 0.1em solid rgb(122, 122, 122);
+   margin: 0.6em;
+   display: flex;
+   flex-direction: column-reverse;
+}
+
+.bayan__icon {
+   align-self: center;   
+}
+
+.bayan__content img {
+   margin: 0 auto;
+   display: block;
+   max-width: 100%;
+   width: 30em;
+}
+
+.bayan_block {
+   display: flex;
+   justify-content: space-between;
+   gap: 1.2em;
+}
+
+
+
+/* крестик */
+.bayan__icon img {
+   transform: rotate(0deg);
+}
+input[name^='bayan']:checked ~ .bayan_block .bayan__icon img {
+   transform: rotate(45deg);
+}
+
+input[name^='bayan'] ~ *,
+.bayan__content:active ~ .bayan_block .bayan__subtitle,
+.bayan__subtitle:active {
+   color: rgb(1, 1, 252) 
+}
+
+input[name^='bayan']:checked ~ .bayan_block {
+   color: rgb(0, 0, 0);
+}
+
+.bayan__content {
+   opacity: 0;
+   visibility: hidden;
+   width: 0%;
+   height: 0%;
+   transition: 0.9s opacity, 0.9s visibility;
+   cursor: pointer;
+}
+
+input[name^='bayan']:checked ~ .bayan__content {
+   opacity: 1;
+   visibility: visible;
+   width: auto;
+   height: 100%;
+}
+
+.bayan__content:active img {
+   filter: brightness(120%);
+   cursor: url("assets/134224_add_plus_new_icon.svg"), auto;
+}
+
+
+
+
+@media (min-width: 320px) {
+   .bayan__title {
+      font-size: 1.5em;
+   }
+   
+   .bayan__subtitle {
+      font-size: 1em;
+   }
+}
+
+@media (min-width: 820px) {
+   .bayan__title {
+      font-size: 2em;
+   }
+   
+   .bayan__subtitle {
+      font-size: 1.5em;
+   }
+}
+
+@media (min-width: 1920px) {
+   .bayan__title {
+      font-size: 2.5em;
+   }
+   
+   .bayan__subtitle {
+      font-size: 2em;
+   }
+}
+
+@media (hover: hover) {
+   .bayan_block {
+      cursor: pointer;
+   }
+
+   .bayan__item:hover .bayan_block .bayan__icon img { /* крестик */
+      transform: rotate(45deg);
+   }
+
+   .bayan:hover .bayan__item > * {
+      color: rgb(0, 0, 0);
+   }
+   .bayan:hover .bayan__item {
+      color: rgb(0, 0, 0); 
+   }
+
+   .bayan__item:hover .bayan__content {
+      opacity: 1;
+      visibility: visible;
+      width: auto;
+      height: 100%;
+   }
+
+   .bayan__icon img {
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.9s ease;
+   }
+   
+   .bayan:hover .bayan__icon img {
+      opacity: 1;
+      visibility: visible;
+      color: rgb(0, 0, 0);
+      transition: all 0.9s ease;
+   }
+}
+
